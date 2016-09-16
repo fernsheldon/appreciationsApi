@@ -37,21 +37,21 @@ Gives a JSON array containing a list of the appreciations.
                                                     "heart":12,
                                                     "heavy_plus_sign":34
                                                 },
-                                    "tags": [
-                                                {
-                                                    "user": "Jennifer Johnson",
-                                                    "id": "1001"
-                                                }, {
-                                                    "user": "Arjun Altaf",
-                                                    "id": "1002"
-                                                }, {
-                                                    "user": "Michale Moore",
-                                                    "id": "1003"
-                                                }, {
-                                                    "user": "Rahul Randhawa",
-                                                    "id": "1004"
-                                                }
-                                            ]
+                                    "usersTagged": [
+                                                        {
+                                                            "name": "Jennifer Johnson",
+                                                            "id": "1001"
+                                                        }, {
+                                                            "name": "Arjun Altaf",
+                                                            "id": "1002"
+                                                        }, {
+                                                            "name": "Michale Moore",
+                                                            "id": "1003"
+                                                        }, {
+                                                            "name": "Rahul Randhawa",
+                                                            "id": "1004"
+                                                        }
+                                                    ]
                                 }, 
                                 {
                                     "id":2,
@@ -62,21 +62,21 @@ Gives a JSON array containing a list of the appreciations.
                                                     "heart":100,
                                                     "heavy_plus_sign":2
                                                 },
-                                    "tags": [
-                                                {
-                                                    "user": "Angela Martin",
-                                                    "id": "2001"
-                                                }, {
-                                                    "user": "Phyllis Lapin",
-                                                    "id": "2002"
-                                                }, {
-                                                    "user": "Meredith Palmer",
-                                                    "id": "2003"
-                                                }, {
-                                                    "user": "Pam Beesly",
-                                                    "id": "2004"
-                                                }
-                                            ]
+                                    "usersTagged": [
+                                                        {
+                                                            "name": "Angela Martin",
+                                                            "id": "2001"
+                                                        }, {
+                                                            "name": "Phyllis Lapin",
+                                                            "id": "2002"
+                                                        }, {
+                                                            "name": "Meredith Palmer",
+                                                            "id": "2003"
+                                                        }, {
+                                                            "name": "Pam Beesly",
+                                                            "id": "2004"
+                                                        }
+                                                    ]
                                 }
                             ]
         }
@@ -91,21 +91,21 @@ and a array of users who the appreciation refers to.
         {
             "text": "Thanks for saving my life and the city of New York once again!",
             "author": "April O'Neil",
-            "tags": [
-                        {
-                            "user": "Leonardo",
-                            "id": "3001"
-                        }, {
-                            "user": "Donatello",
-                            "id": "3002"
-                        }, {
-                            "user": "Michelangelo",
-                            "id": "3003"
-                        }, {
-                            "user": "Raphael",
-                            "id": "3004"
-                        }
-                    ]
+            "usersTagged": [
+                                {
+                                    "name": "Leonardo",
+                                    "id": "3001"
+                                }, {
+                                    "name": "Donatello",
+                                    "id": "3002"
+                                }, {
+                                    "name": "Michelangelo",
+                                    "id": "3003"
+                                }, {
+                                    "name": "Raphael",
+                                    "id": "3004"
+                                }
+                            ]
         }
 
 + Response 201 (application/json)
@@ -123,21 +123,21 @@ and a array of users who the appreciation refers to.
                                 "heart":0,
                                 "heavy_plus_sign":0
                             },
-                "tags": [
-                            {
-                                "user": "Leonardo",
-                                "id": "3001"
-                            }, {
-                                "user": "Donatello",
-                                "id": "3002"
-                            }, {
-                                "user": "Michelangelo",
-                                "id": "3003"
-                            }, {
-                                "user": "Raphael",
-                                "id": "3004"
-                            }
-                        ]
+                "usersTagged": [
+                                    {
+                                        "name": "Leonardo",
+                                        "id": "3001"
+                                    }, {
+                                        "name": "Donatello",
+                                        "id": "3002"
+                                    }, {
+                                        "name": "Michelangelo",
+                                        "id": "3003"
+                                    }, {
+                                        "name": "Raphael",
+                                        "id": "3004"
+                                    }
+                                ]
                 "created_at": "2016-09-05T08:40:51.620Z",
             }
             
@@ -163,21 +163,21 @@ Gives a JSON object containing an appreciation for the requested id.
                             "heart":12,
                             "heavy_plus_sign":34
                         },
-            "tags": [
-                        {
-                            "user": "Jennifer Johnson",
-                            "id": "1001"
-                        }, {
-                            "user": "Arjun Altaf",
-                            "id": "1002"
-                        }, {
-                            "user": "Michale Moore",
-                            "id": "1003"
-                        }, {
-                            "user": "Rahul Randhawa",
-                            "id": "1004"
-                        }
-                    ]
+            "usersTagged": [
+                                {
+                                    "name": "Jennifer Johnson",
+                                    "id": "1001"
+                                }, {
+                                    "name": "Arjun Altaf",
+                                    "id": "1002"
+                                }, {
+                                    "name": "Michale Moore",
+                                    "id": "1003"
+                                }, {
+                                    "name": "Rahul Randhawa",
+                                    "id": "1004"
+                                }
+                            ]
         }
 
 ### Edit an appreciation [PUT]
@@ -197,21 +197,21 @@ users who the appreciation refers to.
                                 "heart":15,
                                 "heavy_plus_sign":20
                             },
-            "tags": [
-                        {
-                            "user": "Leonardo",
-                            "id": "3001"
-                        }, {
-                            "user": "Donatello",
-                            "id": "3002"
-                        }, {
-                            "user": "Michelangelo",
-                            "id": "3003"
-                        }, {
-                            "user": "Raphael",
-                            "id": "3004"
-                        }
-                    ]
+            "usersTagged": [
+                                {
+                                    "name": "Leonardo",
+                                    "id": "3001"
+                                }, {
+                                    "name": "Donatello",
+                                    "id": "3002"
+                                }, {
+                                    "name": "Michelangelo",
+                                    "id": "3003"
+                                }, {
+                                    "name": "Raphael",
+                                    "id": "3004"
+                                }
+                            ]
         }
 
 + Response 200 (application/json)
@@ -229,21 +229,21 @@ users who the appreciation refers to.
                                 "heart":15,
                                 "heavy_plus_sign":20
                             },
-                "tags": [
-                            {
-                                "user": "Leonardo",
-                                "id": "3001"
-                            }, {
-                                "user": "Donatello",
-                                "id": "3002"
-                            }, {
-                                "user": "Michelangelo",
-                                "id": "3003"
-                            }, {
-                                "user": "Raphael",
-                                "id": "3004"
-                            }
-                        ]
+                "usersTagged": [
+                                    {
+                                        "name": "Leonardo",
+                                        "id": "3001"
+                                    }, {
+                                        "name": "Donatello",
+                                        "id": "3002"
+                                    }, {
+                                        "name": "Michelangelo",
+                                        "id": "3003"
+                                    }, {
+                                        "name": "Raphael",
+                                        "id": "3004"
+                                    }
+                                ]
                 "created_at": "2016-09-05T08:40:51.620Z",
             }
 
