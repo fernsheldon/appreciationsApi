@@ -1,13 +1,15 @@
 FORMAT: 1A
 HOST: http://curiosity.com/api
 
-# appreciations
+# Appreciations
 
-A simple API to get all the appreciations.
+A simple API to interact with the appreciations for C2.
 
-## Questions Collection [/appreciations]
+## Apprecaitions Collection [/v1/appreciations]
 
 ### Get a list of all Appreciations [GET]
+
+Gives a JSON array containing a list of the appreciations. 
 
 + Response 200 (application/json)
 
@@ -34,8 +36,10 @@ A simple API to get all the appreciations.
                             }, {
                                 "user": "Rahul Randhawa",
                                 "id": "1004"
-                            }]
-            }, {
+                            }
+                        ]
+            }, 
+            {
                 "id":2,
                 "text": "I want to express my gratitute to the party planning commitee for the wonderful Diwali Celebrations we had at our Univeristy",
                 "author": "Michael Scott",
@@ -57,7 +61,8 @@ A simple API to get all the appreciations.
                             }, {
                                 "user": "Pam Beesly",
                                 "id": "2004"
-                            }]
+                            }
+                        ]
             }]
 
 ### Save an appreciation [POST]
@@ -68,39 +73,166 @@ and a array of users who the appreciation refers to.
 + Request (application/json)
 
         {
-            "text": "Favourite programming language?",
-            "choices": [
-                "Swift",
-                "Python",
-                "Objective-C",
-                "Ruby"
-            ]
+            "text": "Thanks for saving my life and the city of New York once again!",
+            "author": "April O'Neil",
+            "tags": [
+                        {
+                            "user": "Leonardo",
+                            "id": "3001"
+                        }, {
+                            "user": "Donatello",
+                            "id": "3002"
+                        }, {
+                            "user": "Michelangelo",
+                            "id": "3003"
+                        }, {
+                            "user": "Raphael",
+                            "id": "3004"
+                        }
+                    ]
         }
 
 + Response 201 (application/json)
 
     + Headers
 
-            Location: /questions/2
+    + Body
+
+            {
+                "id":3,
+                "text": "Thanks for saving my life and the city of New York once again!"
+                "author": "April O'Neil",
+                "reactions":{
+                                "thumbsup": 0, 
+                                "heart":0,
+                                "heavy_plus_sign":0
+                            },
+                "tags": [
+                            {
+                                "user": "Leonardo",
+                                "id": "3001"
+                            }, {
+                                "user": "Donatello",
+                                "id": "3002"
+                            }, {
+                                "user": "Michelangelo",
+                                "id": "3003"
+                            }, {
+                                "user": "Raphael",
+                                "id": "3004"
+                            }
+                        ]
+                "created_at": "2016-09-05T08:40:51.620Z",
+            }
+            
+
+
+## Apprecaition [/v1/appreciation/{appreciations_id}]
+
++ Parameters
+    + appreciations_id (number) - ID of the appreciation in the form of an integer
+
+### Get an appreciation [GET]
+
+Gives a JSON object containing an appreciation for the requested id. 
+
++ Response 200 (application/json)
+
+        {
+            "id":1,
+            "text": "Congratulations on getting your first paper presented at BIAKM 2016. The whole team has done a wonderful job",
+            "author": "Dr.Asha Nayak",
+            "reactions":{
+                            "thumbsup": 23, 
+                            "heart":12,
+                            "heavy_plus_sign":34
+                        },
+            "tags": [
+                        {
+                            "user": "Jennifer Johnson",
+                            "id": "1001"
+                        }, {
+                            "user": "Arjun Altaf",
+                            "id": "1002"
+                        }, {
+                            "user": "Michale Moore",
+                            "id": "1003"
+                        }, {
+                            "user": "Rahul Randhawa",
+                            "id": "1004"
+                        }
+                    ]
+        }
+
+### Edit an appreciation [PUT]
+
+Takes a JSON object containing the id of the appreciation to edit along with
+a text string as the appreciations, the reactions object, and a array of 
+users who the appreciation refers to.
+
++ Request (application/json)
+
+        {
+            "id":3,
+            "text": "Thanks for saving our life and the city of New York once again!",
+            "author": "April O'Neil",
+            "reactions":{
+                                "thumbsup": 10, 
+                                "heart":15,
+                                "heavy_plus_sign":20
+                            },
+            "tags": [
+                        {
+                            "user": "Leonardo",
+                            "id": "3001"
+                        }, {
+                            "user": "Donatello",
+                            "id": "3002"
+                        }, {
+                            "user": "Michelangelo",
+                            "id": "3003"
+                        }, {
+                            "user": "Raphael",
+                            "id": "3004"
+                        }
+                    ]
+        }
+
++ Response 201 (application/json)
+
+    + Headers
 
     + Body
 
             {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 0
-                    }, {
-                        "choice": "Python",
-                        "votes": 0
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 0
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 0
-                    }
-                ]
+                "id":3,
+                "text": "Thanks for saving my life and the city of New York once again!"
+                "author": "April O'Neil",
+                "reactions":{
+                                "thumbsup": 10, 
+                                "heart":15,
+                                "heavy_plus_sign":20
+                            },
+                "tags": [
+                            {
+                                "user": "Leonardo",
+                                "id": "3001"
+                            }, {
+                                "user": "Donatello",
+                                "id": "3002"
+                            }, {
+                                "user": "Michelangelo",
+                                "id": "3003"
+                            }, {
+                                "user": "Raphael",
+                                "id": "3004"
+                            }
+                        ]
+                "created_at": "2016-09-05T08:40:51.620Z",
             }
+
+### Delete [DELETE]
+
+Delets the appreciation for the given id. 
+
++ Response 204
