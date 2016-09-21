@@ -32,6 +32,7 @@ Gives a JSON array containing a list of the appreciations.
                                     "id":1,
                                     "text": "Congratulations on getting your first paper presented at BIAKM 2016. The whole team has done a wonderful job",
                                     "author": "Dr.Asha Nayak",
+                                    "category":"general",
                                     "reactions":{
                                                     "thumbsup": 23, 
                                                     "heart":12,
@@ -56,6 +57,7 @@ Gives a JSON array containing a list of the appreciations.
                                 {
                                     "id":2,
                                     "text": "I want to express my gratitute to the party planning commitee for the wonderful Diwali Celebrations we had at our Univeristy",
+                                    "category":"general",
                                     "author": "Michael Scott",
                                     "reactions":{
                                                     "thumbsup": 4, 
@@ -91,6 +93,7 @@ and a array of users who the appreciation refers to.
         {
             "text": "Thanks for saving my life and the city of New York once again!",
             "author": "April O'Neil",
+            "category":"general",
             "usersTagged": [
                                 {
                                     "name": "Leonardo",
@@ -108,7 +111,7 @@ and a array of users who the appreciation refers to.
                             ]
         }
 
-+ Response 201 (application/json)
++ Response 200 (application/json)
 
     + Headers
 
@@ -118,6 +121,7 @@ and a array of users who the appreciation refers to.
                 "id":3,
                 "text": "Thanks for saving my life and the city of New York once again!"
                 "author": "April O'Neil",
+                "category":"general",
                 "reactions":{
                                 "thumbsup": 0, 
                                 "heart":0,
@@ -157,6 +161,7 @@ Gives a JSON object containing an appreciation for the requested id.
         {
             "id":1,
             "text": "Congratulations on getting your first paper presented at BIAKM 2016. The whole team has done a wonderful job",
+            "category":"general",
             "author": "Dr.Asha Nayak",
             "reactions":{
                             "thumbsup": 23, 
@@ -191,6 +196,7 @@ users who the appreciation refers to.
         {
             "id":3,
             "text": "Thanks for saving our life and the city of New York once again!",
+            "category":"general",
             "author": "April O'Neil",
             "reactions":{
                                 "thumbsup": 10, 
@@ -224,6 +230,7 @@ users who the appreciation refers to.
                 "id":3,
                 "text": "Thanks for saving my life and the city of New York once again!"
                 "author": "April O'Neil",
+                "category":"general",
                 "reactions":{
                                 "thumbsup": 10, 
                                 "heart":15,
